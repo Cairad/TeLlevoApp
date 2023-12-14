@@ -1,0 +1,122 @@
+ion-content {
+  --background: #0b1727;
+}
+
+.miniperfil {
+  margin-top: 20px;
+  color: white;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .imgperfil {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    border: 1px solid #4f4ac2;
+    margin-top: -10px;
+  }
+  .usu {
+    font-family: sans-serif;
+    font-size: large;
+  }
+  .dt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .tl {
+      font-family: sans-serif;
+      font-size: 10px;
+      margin-top: -7px;
+      margin-bottom: 20px;
+      margin-right: 25px;
+    }
+    .cor {
+      font-family: sans-serif;
+      font-size: 10px;
+      margin-top: -8px;
+      margin-bottom: 20px;
+    }
+  }
+}
+.linea-horizontal {
+  border: 1px solid #4f4ac2;
+  width: 80%;
+  margin: auto;
+}
+
+.datos-personales {
+  color: white;
+  font-family: sans-serif;
+  text-align: left;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.datos-chofer {
+  color: white;
+  font-family: sans-serif;
+  text-align: left;
+  margin-top: 20px;
+}
+
+.etiqueta {
+  font-size: small;
+  margin-left: 30px;
+}
+
+.nombre-container,
+.apellido-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: small;
+  margin-right: 30px;
+
+}
+
+.boton-container {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  ion-button {
+    --color: #fff;
+    background-color: #4f4ac2;
+    border-radius: 10px;
+    padding: auto;
+    width: 45px;
+    margin-left: 10px;
+    margin-right: 10px;
+    box-shadow: 0 5px 15px rgba(91, 125, 236, 0.3);
+  }
+  .texto-fuera-del-boton {
+    color: white;
+    font-size: x-large;
+    margin-top: 10px;
+  }
+}
+
+.datos {
+  color: white;
+  font-size: x-large;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.contbtn {
+  display: flex;
+  flex-direction: column; /* Alinea los elementos en columna en lugar de fila */
+  align-items: center; /* Centra los elementos horizontalmente */
+  margin-top: 15vh;
+  ion-button {
+    width: 80%;
+    --background: linear-gradient(to bottom, #4f4ac2, #4147bf);
+    --border-radius: 10px;
+    --box-shadow: 0 5px 15px rgba(91, 125, 236, 0.3);
+  }
+  &.driver-profile {
+    margin-top: 5vh;
+  }
+}

@@ -1,0 +1,45 @@
+<ion-content>
+  <ion-modal
+    #modal
+    trigger="open-modal"
+    [isOpen]="true"
+    mode="ios"
+    [initialBreakpoint]="0.25"
+    [breakpoints]="[0.25, 0.5, 0.75,1]"
+    [backdropDismiss]="false"
+    [backdropBreakpoint]="0.5"
+  >
+    <ng-template>
+      <div class="login-section">
+        <div class="header ion-padding">
+          <h1>Bienvenido</h1>
+          <p>Inicia sesión para continuar</p>
+        </div>
+        <div class="login-form">
+          <div class="form-input">
+            <ion-icon name="mail-outline" style="color: white;"></ion-icon>
+            <ion-input
+              class="inp"
+              type="email"
+              placeholder="Correo"
+              [(ngModel)]="email"
+            ></ion-input>
+          </div>
+          <div class="form-input">
+            <ion-icon name="lock-closed-outline" style="color: white;"></ion-icon>
+            <ion-input
+              class="inp"
+              type="password"
+              placeholder="Contraseña"
+              [(ngModel)]="password"
+            ></ion-input>
+          </div>
+        </div>
+        <div class="action-buttons ion-padding op">
+          <ion-button (click)="login()"> Iniciar sesión </ion-button>
+          <p style="color: #4f4ac2">¿Olvidaste tu contraseña?</p>
+        </div>
+      </div>
+    </ng-template>
+  </ion-modal>
+</ion-content>

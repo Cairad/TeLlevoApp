@@ -1,0 +1,90 @@
+<ion-content [fullscreen]="true">
+  <ion-menu side="start" contentId="main-content">
+    <ion-content>
+      <div class="miniperfil">
+        <div class="imgperfil">
+          <img src="../../../assets/img/usuario.png" alt="" />
+        </div>
+        <p class="usu">{{ userProfile?.firstName }}</p>
+        <p class="cor">{{ userProfile?.email }}</p>
+      </div>
+      <div class="linea-horizontal"></div>
+
+      <!-- Contenedor para los botones -->
+      <div class="botones-container">
+        <!-- Primer botón -->
+        <div class="boton-container">
+          <ion-button expand="full" fill="clear" [routerLink]="['/perfil']">
+            <ion-icon name="person-outline"></ion-icon>
+          </ion-button>
+          <div class="texto-fuera-del-boton">Perfil</div>
+        </div>
+
+        <!-- Primer botón -->
+        <div class="boton-container">
+          <ion-button expand="full" fill="clear" [routerLink]="['/historial']">
+            <ion-icon name="time-outline"></ion-icon>
+          </ion-button>
+          <div class="texto-fuera-del-boton">Historial</div>
+        </div>
+
+        <!-- Segundo botón -->
+        <div class="boton-container">
+          <ion-button expand="full" fill="clear">
+            <ion-icon name="settings-outline"></ion-icon>
+          </ion-button>
+          <div class="texto-fuera-del-boton">Configuraciones</div>
+        </div>
+
+        <!-- Cuarto botón -->
+        <div class="boton-container">
+          <ion-button expand="full" fill="clear" (click)="logout()">
+            <ion-icon name="log-out-outline"></ion-icon>
+          </ion-button>
+          <div class="texto-fuera-del-boton">Cerrar Sesion</div>
+        </div>
+      </div>
+    </ion-content>
+  </ion-menu>
+
+  <ion-router-outlet id="main-content"></ion-router-outlet>
+
+  <ion-header>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-header>
+
+  <ion-fab class="lcl" horizontal="left" vertical="top">
+    <ion-fab-button class="locate">
+      <ion-icon name="locate-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <div id="map"></div>
+
+  <ion-fab class="lcl" horizontal="center" vertical="bottom" *ngIf="!userProfile?.isDriver">
+    <ion-fab-button class="crearvj">
+      <ion-icon name="search-outline"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button class="crearvj" (click)="openModal3()">
+        <ion-icon name="reader-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+
+  <ion-fab class="lcl" horizontal="center" vertical="bottom" *ngIf="userProfile?.isDriver">
+    <ion-fab-button class="crearvj">
+      <ion-icon name="menu-outline"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button class="crearvj" (click)="openModal2()">
+        <ion-icon name="reader-outline"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button class="crearvj" (click)="openModal()">
+        <ion-icon name="paper-plane-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+</ion-content>

@@ -1,0 +1,58 @@
+<ion-content [fullscreen]="true">
+  <div class="boton-container">
+    <ion-button expand="full" fill="clear" [routerLink]="['/home']">
+      <ion-icon name="chevron-back-outline"></ion-icon>
+    </ion-button>
+    <div class="texto-fuera-del-boton">Historial</div>
+  </div>
+  <div class="viaje" [style.height]="alturaViaje" *ngFor="let viaje of historialViajes">
+    <div class="puntoi">
+      <div class="DIF">
+        <p class="inicio">
+          <ion-icon name="radio-button-on-outline" class="pti"></ion-icon>Inicio
+        </p>
+        <p class="direccion">{{ viaje.inicio }}</p>
+      </div>
+      <p class="hora">13:10</p>
+    </div>
+    <div class="linea-horizontal"></div>
+    <div class="puntoi">
+      <div class="DIF">
+        <p class="inicio">
+          <ion-icon name="radio-button-on-outline" class="ptd"></ion-icon
+          >Destino
+        </p>
+        <p class="direccion">{{ viaje.inicio }}</p>
+      </div>
+      <p class="hora">13:25</p>
+    </div>
+    <div *ngIf="mostrarDetalles" class="detalles">
+      <div class="linea-horizontal"></div>
+      <img src="../../../assets/img/slpash-removebg-preview.png" alt="" />
+
+      <div class="linea-horizontal"></div>
+      <div class="puntoi">
+        <div class="DIF">
+          <p class="inicio">Marca : Auto</p>
+        </div>
+        <div>
+          <p class="tarifa">Modelo : Auto</p>
+        </div>
+      </div>
+      <div class="puntoi">
+        <div class="DIF">
+          <p class="inicio">Chofer: {{ viaje.nombreChofer }}</p>
+        </div>
+        <div>
+          <p class="tarifa">$3000</p>
+        </div>
+      </div>
+    </div>
+    <!-- Nuevo botón abajo al medio -->
+    <div class="boton-container2" [style.marginTop]="alturaViaje">
+      <ion-button expand="full" fill="clear" (click)="toggleDetalles()">
+        <ion-icon [name]="iconoBoton"></ion-icon>
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

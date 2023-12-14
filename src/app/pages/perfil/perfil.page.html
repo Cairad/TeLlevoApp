@@ -1,0 +1,78 @@
+<ion-content [fullscreen]="true">
+  <form [formGroup]="profileForm"> <!-- Agregamos el formGroup al formulario -->
+    <div class="boton-container">
+      <ion-button expand="full" fill="clear" [routerLink]="['/home']">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </ion-button>
+      <div class="texto-fuera-del-boton" *ngIf="userProfile?.isDriver">
+        Perfil Chofer
+      </div>
+      <div class="texto-fuera-del-boton" *ngIf="!userProfile?.isDriver">
+        Perfil Pasajero
+      </div>
+    </div>
+    <div class="miniperfil">
+      <div class="imgperfil">
+        <img src="../../../assets/img/usuario.png" alt="" />
+      </div>
+      <p class="usu">{{ userProfile?.firstName }}</p>
+      <div class="dt">
+        <p class="tl">{{ userProfile?.phoneNumber }}</p>
+        <p class="cor">{{ userProfile?.email }}</p>
+      </div>
+    </div>
+    <div class="datos">
+      Datos Personales
+    </div>
+    <div class="datos-personales">
+      <div class="nombre-container">
+        <ion-item *ngIf="isEditMode">
+          <ion-label position="stacked">Nombre</ion-label>
+          <ion-input formControlName="firstName" placeholder="Nombre"></ion-input>
+        </ion-item>
+        <p *ngIf="!isEditMode" class="etiqueta">Nombre:</p>
+        <p class="nombre" *ngIf="!isEditMode">{{ userProfile?.firstName }}</p>
+      </div>
+      <div class="linea-horizontal"></div>
+      <div class="apellido-container">
+        <ion-item *ngIf="isEditMode">
+          <ion-label position="stacked">Apellido</ion-label>
+          <ion-input formControlName="lastName" placeholder="Apellido"></ion-input>
+        </ion-item>
+        <p *ngIf="!isEditMode" class="etiqueta">Apellido:</p>
+        <p class="apellido" *ngIf="!isEditMode">{{ userProfile?.lastName }}</p>
+      </div>
+      <div class="linea-horizontal"></div>
+    </div>
+
+    <div class="datos" *ngIf="userProfile?.isDriver">
+      Datos Vehiculo
+    </div>
+
+    <div class="datos-chofer" *ngIf="userProfile?.isDriver">
+      <div class="nombre-container">
+        <ion-item *ngIf="isEditMode">
+          <ion-label position="stacked">Vehiculo</ion-label>
+          <ion-input formControlName="carDetails.brand" placeholder="Vehiculo"></ion-input>
+        </ion-item>
+        <p *ngIf="!isEditMode" class="etiqueta">Vehiculo:</p>
+        <p class="nombre" *ngIf="!isEditMode">{{ userProfile.carDetails?.brand }}</p>
+      </div>
+      <div class="linea-horizontal"></div>
+      <div class="apellido-container">
+        <ion-item *ngIf="isEditMode">
+          <ion-label position="stacked">Modelo</ion-label>
+          <ion-input formControlName="carDetails.model" placeholder="Modelo"></ion-input>
+        </ion-item>
+        <p *ngIf="!isEditMode" class="etiqueta">Modelo:</p>
+        <p class="apellido" *ngIf="!isEditMode">{{ userProfile.carDetails?.model }}</p>
+      </div>
+      <div class="linea-horizontal"></div>
+    </div>
+    <div class="contbtn" [class.driver-profile]="userProfile?.isDriver">
+      <ion-button (click)="toggleEditMode()">
+        {{ isEditMode ? 'Guardar cambios' : 'Editar perfil' }}
+      </ion-button>
+    </div>
+  </form> <!-- Cerramos el formulario -->
+</ion-content>

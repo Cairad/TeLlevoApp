@@ -1,0 +1,48 @@
+ion-content {
+  --background: #0b1727;
+}
+
+.tlla {
+  height: 70vh;
+  width: 100%;
+  background: linear-gradient(to bottom, #4f4ac2, #4147bf);
+  color: white;
+  border-radius: 0 0 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: sans-serif;
+  box-shadow: 0 5px 15px rgba(91, 125, 236, 0.3);
+}
+
+.tlla .h1 {
+  margin-top: 10vh; /* Cambiado de píxeles a viewport height (vh) */
+  font-size: 13vw; /* Cambiado de píxeles a viewport width (vw) */
+}
+
+.contbtn {
+  display: flex;
+  justify-content: center;
+  margin-top: 10vh; /* Cambiado de píxeles a viewport height (vh) */
+}
+
+ion-button {
+  width: 80%;
+  --background: linear-gradient(to bottom, #4f4ac2, #4147bf);
+  --border-radius: 10px;
+  --box-shadow: 0 5px 15px rgba(91, 125, 236, 0.3);
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.tlla img {
+  animation: slideIn 2s ease;
+  margin-top: 10vh; /* Cambiado de píxeles a viewport height (vh) */
+}

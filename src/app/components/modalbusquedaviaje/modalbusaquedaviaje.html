@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="Titulo">Busqueda de viajes</div>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar (ionChange)="buscarViajes($event)"></ion-searchbar>
+  <div>
+    <ion-item *ngFor="let viaje of viajes" lines="full">
+      <ion-label>
+        <h2>{{ viaje.nombre }}</h2>
+        <ion-fab class="lcl" horizontal="left" vertical="top">
+          <ion-fab-button class="locate" (click)="mostrarRuta(viaje)">
+            <ion-icon name="map-outline"></ion-icon>
+          </ion-fab-button>
+        </ion-fab>
+        <p>
+          Inicio:
+          <ion-icon name="radio-button-on-outline" class="inicio"></ion-icon>
+          {{ viaje.inicio }}
+        </p>
+        <p>
+          Destino:
+          <ion-icon name="radio-button-on-outline" class="fin"></ion-icon>
+          {{ viaje.destino }}
+        </p>
+        <p>Tarifa: ${{ viaje.tarifa }}</p>
+      </ion-label>
+    </ion-item>
+  </div>
+</ion-content>

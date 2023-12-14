@@ -1,0 +1,168 @@
+ion-header {
+  margin-top: 10px;
+  margin-left: 10px;
+  height: 30px;
+  width: 30px;
+  background: #4f4ac2;
+  color: white;
+  border-radius: 15px;
+  ion-buttons {
+    display: flex;
+    justify-content: center;
+    ion-menu-button {
+      margin-top: -8px;
+    }
+  }
+}
+
+ion-menu {
+  --width: 80%;
+  border: solid 2px #4f4ac2;
+  z-index: 11;
+  ion-content {
+    --width: 100%;
+    --background: #0b1727;
+    .miniperfil {
+      margin-top: 20px;
+      color: white;
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .imgperfil {
+        height: 70px;
+        width: 70px;
+        border-radius: 50%;
+        border: 1px solid #4f4ac2;
+      }
+      .usu {
+        font-family: sans-serif;
+        font-size: large;
+      }
+      .cor {
+        font-family: sans-serif;
+        font-size: small;
+        margin-top: -12px;
+        margin-bottom: 25px;
+      }
+    }
+  }
+}
+
+.linea-horizontal {
+  border: 1px solid #4f4ac2;
+  width: 80%;
+  margin: auto;
+}
+
+.botones-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  color: #fff;
+}
+
+.boton-container {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  ion-button {
+    --color: #fff;
+    background-color: #4f4ac2;
+    border-radius: 10px;
+    padding: auto;
+    width: 45px;
+    margin-left: 10px;
+    margin-right: 10px;
+    box-shadow: 0 5px 15px rgba(91, 125, 236, 0.3);
+  }
+}
+
+.lcl {
+  right: 10px;
+  z-index: 10;
+}
+
+.locate {
+  --background: #4f4ac2;
+  height: 30px;
+  width: 30px;
+  position: fixed;
+  right: 10px;
+  ion-icon {
+    height: 20px;
+    width: 20px;
+    color: white;
+  }
+}
+
+.search {
+  --background: #4f4ac2;
+  height: 30px;
+  width: 30px;
+  position: fixed;
+  right: 10px;
+  ion-icon {
+    height: 20px;
+    width: 20px;
+    color: white;
+  }
+}
+
+.search {
+  &.search {
+    &.active {
+      // Estilos específicos cuando la barra de búsqueda está activa
+      margin-bottom: 60px;
+    }
+  }
+}
+
+.crearvj {
+  --background: #4f4ac2;
+  height: 30px;
+  width: 30px;
+  right: 10px;
+  ion-icon {
+    height: 20px;
+    width: 20px;
+    color: white;
+  }
+}
+
+ion-content {
+  --background: #0b1727;
+}
+
+#map {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.search-bar-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  box-shadow: 0px -2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+
+  .custom-searchbar {
+    --border-radius: 10px;
+    --ion-background-color: #00000080; // Color searchbar
+    --placeholder-color: rgb(255, 255, 255); // Color del marcador de posición
+    --box-shadow: 0 5px 15px rgba(91, 125, 236, 0.3); // Color de fondo del ion-searchbar
+    --color: #fff;
+  }
+}
+
+.leaflet-control-zoom {
+  --margin-top: 80px;
+}

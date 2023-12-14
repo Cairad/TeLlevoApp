@@ -1,0 +1,109 @@
+ion-content {
+  --background: #0b1727;
+}
+
+.boton-container {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  ion-button {
+    --color: #fff;
+    background-color: #4f4ac2;
+    border-radius: 10px;
+    padding: auto;
+    width: 45px;
+    margin-left: 10px;
+    margin-right: 10px;
+    box-shadow: 0 5px 15px rgba(91, 125, 236, 0.3);
+  }
+  .texto-fuera-del-boton {
+    color: #fff;
+    font-family: sans-serif;
+  }
+}
+
+.boton-container2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  ion-button {
+    --color: #fff;
+    background-color: #4f4ac2;
+    border-radius: 10px;
+    padding: auto;
+    width: 45px;
+    box-shadow: 0 5px 15px rgba(91, 125, 236, 0.3);
+  }
+}
+
+.linea-horizontal {
+  border: 0.5px solid rgba(80, 74, 194, 0.3); /* Ajusta el valor alpha según lo que necesites */
+  width: 75%;
+  margin-top: -5px;
+  margin-left: 27px;
+}
+
+.viaje {
+  height: 22%;
+  width: 80%;
+  background-color: #0000008e;
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+  border-radius: 15px;
+  position: relative;
+}
+
+.viaje::before {
+  content: "";
+  position: absolute;
+  background-color: rgb(80, 74, 194, 0.3); /* Color de la línea vertical */
+  width: 1px; /* Ancho de la línea vertical */
+  margin-top: 30px;
+  height: 23%;
+  left: 7.5%; /* Posiciona el centro de la línea en el centro del contenedor .viaje */
+  transform: translateX(-92.5%); /* Centra la línea vertical */
+}
+
+.DIF {
+  margin-left: 10px;
+}
+
+.puntoi {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative; /* Agrega posición relativa para que el ::before sea relativo a este contenedor */
+}
+
+.tarifa {
+  margin-right: 10px;
+  color: #ffffff;
+  font-size: smaller;
+}
+
+.inicio {
+  color: #ffffffc7;
+  font-size: smaller;
+  .pti {
+    margin-right: 5px;
+    color: #4f4ac2;
+  }
+  .ptd {
+    margin-right: 5px;
+    color: rgb(212, 67, 67);
+  }
+}
+
+.direccion {
+  margin-left: 18px;
+  margin-top: -10px;
+  color: #ffffff;
+  font-size: small;
+}
+
+.hora {
+  margin-right: 10px;
+  color: #fff;
+  font-size: small;
+}

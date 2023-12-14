@@ -1,0 +1,132 @@
+<ion-content>
+  <!-- Sección 1: Número telefónico -->
+  <div class="form">
+    <ion-card *ngIf="currentStep === 1">
+      <ion-card-content>
+        <p class="nt">Ingresa tu numero telefonico</p>
+        <ion-input
+          class="inp"
+          type="text"
+          placeholder="+56 912345678"
+          [(ngModel)]="userDetails.phoneNumber"
+        ></ion-input>
+        <div class="contbtn">
+          <ion-button (click)="nextStep()">Siguiente</ion-button>
+        </div>
+        <div class="reenviar-text">
+          <p>
+            ¿Ya tienes cuenta?
+            <a routerLink="/login" style="color: #4f4ac2">Iniciar sesión</a>
+          </p>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Sección 2: Confirmación del número -->
+    <ion-card *ngIf="currentStep === 2">
+      <ion-card-content>
+        <p class="nt">Confirma tu número</p>
+        <div class="container">
+          <div class="input-container">
+            <input type="text" maxlength="1" class="input-box" />
+            <input type="text" maxlength="1" class="input-box" />
+            <input type="text" maxlength="1" class="input-box" />
+            <input type="text" maxlength="1" class="input-box" />
+          </div>
+        </div>
+        <div class="reenviar-text">
+          <p>Reenviar código de verificación</p>
+        </div>
+        <div class="contbtn2">
+          <ion-button (click)="nextStep()">Siguiente</ion-button>
+          <ion-button (click)="goBack()">Atras</ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Sección 3: Datos personales -->
+    <ion-card *ngIf="currentStep === 3">
+      <ion-card-content>
+        <ion-input
+          class="inp"
+          [(ngModel)]="userDetails.firstName"
+          placeholder="Nombre"
+        ></ion-input>
+        <ion-input
+          class="inp2"
+          [(ngModel)]="userDetails.lastName"
+          placeholder="Apellido"
+        ></ion-input>
+        <div class="contbtn2">
+          <ion-button (click)="nextStep()">Siguiente</ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Sección 4: Correo y contraseña -->
+    <ion-card *ngIf="currentStep === 4">
+      <ion-card-content>
+        <ion-input
+          class="inp"
+          [(ngModel)]="userDetails.email"
+          type="email"
+          placeholder="Correo"
+        ></ion-input>
+        <ion-input
+          class="inp2"
+          type="password"
+          placeholder="Contraseña"
+          [(ngModel)]="userDetails.password"
+        ></ion-input>
+
+        <div class="ifch">
+          <label for="userDetails.isDriver">¿Eres chofer?</label>
+          <ion-checkbox
+            id="isDriver"
+            [(ngModel)]="userDetails.isDriver"
+            mode="ios"
+            style="margin-left: 15px;"
+            (ionChange)="updateRegistrarVisibility()"
+          ></ion-checkbox>
+        </div>
+
+        <div class="contbtn2">
+          <ion-button *ngIf="isRegistrarVisible" (click)="register()">Registrar</ion-button>
+
+          <ion-button *ngIf="userDetails.isDriver" (click)="nextStep()"
+            >Siguiente</ion-button
+          >
+          <ion-button (click)="goBack()">Atras</ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Sección 5: Correo y contraseña -->
+    <ion-card *ngIf="currentStep === 5">
+      <ion-card-content>
+        <p class="iv">Informacion del Vehiculo</p>
+        <div *ngIf="userDetails.isDriver">
+          <label for="carBrand">Marca del Auto:</label>
+          <ion-input
+            class="inp3"
+            type="text"
+            id="carBrand"
+            [(ngModel)]="userDetails.carDetails.brand"
+          />
+
+          <label for="carModel">Modelo del Auto:</label>
+          <ion-input
+            class="inp3"
+            type="text"
+            id="carModel"
+            [(ngModel)]="userDetails.carDetails.model"
+          />
+          <div class="contbtn3">
+            <ion-button (click)="register()">Registrar</ion-button>
+            <ion-button (click)="goBack()">Atras</ion-button>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
